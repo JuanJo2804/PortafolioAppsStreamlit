@@ -52,7 +52,8 @@ st.markdown("""
     text-decoration: none;
     color: inherit;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    height: 430px;
+    width: 430px;
+    height: 300px;
     border: 1px solid #f1f5f9;
 }
 
