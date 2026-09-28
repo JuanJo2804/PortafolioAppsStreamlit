@@ -63,8 +63,8 @@ st.markdown("""
 
 /* Contenedor izquierdo para la imagen/ícono */
 .card-img-container {
-    width: 100%;
-    height: 100%;
+    width: 170px;
+    height: 170px;
     background-color: #f8fafc;
     border-radius: 8px;
     display: flex;
@@ -73,7 +73,6 @@ st.markdown("""
     flex-shrink: 0;
     font-size: 2.2rem; /* Tamaño del emoji si no hay imagen */
     overflow: hidden;
-    border: 1px solid #e2e8f0;
 }
 
 /* Ajuste para cuando agregues tus propias imágenes */
