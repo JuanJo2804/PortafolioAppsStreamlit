@@ -121,17 +121,17 @@ st.markdown('<div class="main-title">PORTAFOLIO DE APLICACIONES - PROGRAMACIÓN 
 # 4. Diccionario con la información de tus apps
 # He deducido las categorías (Clasificación, Regresión, etc.) basado en el tipo de app.
 apps = [
-    {"title": "¿Qué fruta es más parecida?", "url": "https://classfruta-f.streamlit.app/", "tag": "Clasificación", "emoji": "🍎", "img_name": "fruta.png"},
-    {"title": "Predictor de Sensación Térmica", "url": "https://detertorhumedad-nvjwjmhhrsty7bwfgstxa3.streamlit.app/", "tag": "Regresión", "emoji": "🌡️", "img_name": "termica.png"},
-    {"title": "Descenso de Gradiente Interactivo", "url": "https://classgradiente-rilcadzxbznff36rzktne4.streamlit.app/#descenso-de-gradiente-interactivo", "tag": "Optimización", "emoji": "🎯", "img_name": "gradiente.png"},
-    {"title": "Diagnóstico de fertilidad del suelo", "url": "https://fertilidadearth-rfvcy72pchvfvwzgd5wdlg.streamlit.app/", "tag": "Clasificación", "emoji": "🌱", "img_name": "suelo.png"},
-    {"title": "¿Lloverá mañana? — Reg. Logística", "url": "https://modelostemphumedviento-6b2ajmpd6qz9scxbakf4uz.streamlit.app/", "tag": "Regresión", "emoji": "🌧️", "img_name": "lluvia.png"},
-    {"title": "Detector de Anomalías", "url": "https://arc.net/l/quote/xoxiyzae", "tag": "Big-O", "emoji": "🚨", "img_name": "anomalias.png"},
-    {"title": "Series de tiempo reales", "url": "https://processdata-pqmxqgcg4yacx9gpcowjsh.streamlit.app/", "tag": "Forecasting", "emoji": "📈", "img_name": "tiempo_real.png"},
-    {"title": "Predictor de calidad del aire", "url": "https://pronosticomodelo-9pytzljfpl47tmyrlntbde.streamlit.app/", "tag": "Regresión", "emoji": "🌫️", "img_name": "aire.png"},
-    {"title": "Regresión — Conceptos clave", "url": "https://regrecionclass-9zycjwxkrqzg3reuqub5zr.streamlit.app/", "tag": "Optimización", "emoji": "📉", "img_name": "regresion.png"},
-    {"title": "Series de Tiempo — Sensor IoT", "url": "https://sensorsimulado-by8ou9uzu8yw4nxbzegbdt.streamlit.app/", "tag": "Streaming", "emoji": "🛜", "img_name": "iot.png"},
-    {"title": "Nivel de ríos y quebradas", "url": "https://tallerportafolio1-df6dptfca4jgc7gf2nzoq8.streamlit.app/", "tag": "Forecasting", "emoji": "🌊", "img_name": "rios.png"}
+    {"title1": "¿Qué fruta es más parecida?", "url": "https://classfruta-f.streamlit.app/", "tag": "Clasificación", "emoji": "🍎", "img_name": "fruta.png"},
+    {"title2": "Predictor de Sensación Térmica", "url": "https://detertorhumedad-nvjwjmhhrsty7bwfgstxa3.streamlit.app/", "tag": "Regresión", "emoji": "🌡️", "img_name": "termica.png"},
+    {"title3": "Descenso de Gradiente Interactivo", "url": "https://classgradiente-rilcadzxbznff36rzktne4.streamlit.app/#descenso-de-gradiente-interactivo", "tag": "Optimización", "emoji": "🎯", "img_name": "gradiente.png"},
+    {"title4": "Diagnóstico de fertilidad del suelo", "url": "https://fertilidadearth-rfvcy72pchvfvwzgd5wdlg.streamlit.app/", "tag": "Clasificación", "emoji": "🌱", "img_name": "suelo.png"},
+    {"title5": "¿Lloverá mañana? — Reg. Logística", "url": "https://modelostemphumedviento-6b2ajmpd6qz9scxbakf4uz.streamlit.app/", "tag": "Regresión", "emoji": "🌧️", "img_name": "lluvia.png"},
+    {"title6": "Detector de Anomalías", "url": "https://arc.net/l/quote/xoxiyzae", "tag": "Big-O", "emoji": "🚨", "img_name": "anomalias.png"},
+    {"title7": "Series de tiempo reales", "url": "https://processdata-pqmxqgcg4yacx9gpcowjsh.streamlit.app/", "tag": "Forecasting", "emoji": "📈", "img_name": "tiempo_real.png"},
+    {"title8": "Predictor de calidad del aire", "url": "https://pronosticomodelo-9pytzljfpl47tmyrlntbde.streamlit.app/", "tag": "Regresión", "emoji": "🌫️", "img_name": "aire.png"},
+    {"title9": "Regresión — Conceptos clave", "url": "https://regrecionclass-9zycjwxkrqzg3reuqub5zr.streamlit.app/", "tag": "Optimización", "emoji": "📉", "img_name": "regresion.png"},
+    {"title10": "Series de Tiempo — Sensor IoT", "url": "https://sensorsimulado-by8ou9uzu8yw4nxbzegbdt.streamlit.app/", "tag": "Streaming", "emoji": "🛜", "img_name": "iot.png"},
+    {"title11": "Nivel de ríos y quebradas", "url": "https://tallerportafolio1-df6dptfca4jgc7gf2nzoq8.streamlit.app/", "tag": "Forecasting", "emoji": "🌊", "img_name": "rios.png"}
 ]
 
 # 5. Generar la cuadrícula de 3 columnas
@@ -151,7 +151,17 @@ for idx, app in enumerate(apps):
     card_html = f"""
     <a href="{app['url']}" target="_blank" class="card">
         <div class="card-img-container">
-            <img src="Regression.jpeg" alt="{app['¿Qué fruta es más parecida?']}>
+            <img src="ClasificacionFrutas.jpeg" alt="{app['title1']}>
+            <img src="RegrecionPredictiva.jpeg" alt="{app['title2']}>
+            <img src="DesensoGrafiente.jpeg" alt="{app['title3']}>
+            <img src="ClasificacionFertilidad.jpeg" alt="{app['title4']}>
+            <img src="RegrecionLogistica.jpeg" alt="{app['title5']}>
+            <img src="Regression.jpeg" alt="{app['title6']}>
+            <img src="Regression.jpeg" alt="{app['title7']}>
+            <img src="Regression.jpeg" alt="{app['title8']}>
+            <img src="Regression.jpeg" alt="{app['title9']}>
+            <img src="Regression.jpeg" alt="{app['title10']}>
+            <img src="Regression.jpeg" alt="{app['title'11]}>
         </div>
         <div class="card-content">
             <h3 class="card-title">{app['title']}</h3>
