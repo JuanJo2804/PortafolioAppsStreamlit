@@ -52,7 +52,7 @@ st.markdown("""
     text-decoration: none;
     color: inherit;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    height: 130px;
+    height: 430px;
     border: 1px solid #f1f5f9;
 }
 
@@ -63,8 +63,8 @@ st.markdown("""
 
 /* Contenedor izquierdo para la imagen/ícono */
 .card-img-container {
-    width: 80px;
-    height: 80px;
+    width: 300px;
+    height: 300px;
     background-color: #f8fafc;
     border-radius: 8px;
     display: flex;
