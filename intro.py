@@ -151,7 +151,7 @@ for idx, app in enumerate(apps):
     card_html = f"""
     <a href="{app['url']}" target="_blank" class="card">
         <div class="card-img-container">
-            {app['emoji']}
+            <img src="Regression.jpeg" alt="{app['tittle']}>
         </div>
         <div class="card-content">
             <h3 class="card-title">{app['title']}</h3>
