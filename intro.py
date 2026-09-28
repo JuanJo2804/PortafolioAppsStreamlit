@@ -161,7 +161,7 @@ for idx, app in enumerate(apps):
             <img src="Regression.jpeg" alt="{app['title8']}>
             <img src="Regression.jpeg" alt="{app['title9']}>
             <img src="Regression.jpeg" alt="{app['title10']}>
-            <img src="Regression.jpeg" alt="{app['title'11]}>
+            <img src="Regression.jpeg" alt="{app['title11']}>
         </div>
         <div class="card-content">
             <h3 class="card-title">{app['title']}</h3>
