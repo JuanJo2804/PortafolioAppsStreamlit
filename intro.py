@@ -63,8 +63,8 @@ st.markdown("""
 
 /* Contenedor izquierdo para la imagen/ícono */
 .card-img-container {
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    height: 100%;
     background-color: #f8fafc;
     border-radius: 8px;
     display: flex;
