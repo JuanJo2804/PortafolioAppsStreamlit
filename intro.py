@@ -1,4 +1,15 @@
 import streamlit as st
+import base64
+import os
+
+
+def obtener_imagen_base64(ruta_imagen):
+    if os.path.exists(ruta_imagen):
+        with open(ruta_imagen, 'rb') as f:
+            data = f.read()
+        return base64.b64encode(data).decode()
+    return None
+
 
 # 1. Configuración básica de la página
 st.set_page_config(
@@ -121,47 +132,41 @@ st.markdown('<div class="main-title">PORTAFOLIO DE APLICACIONES - PROGRAMACIÓN 
 # 4. Diccionario con la información de tus apps
 # He deducido las categorías (Clasificación, Regresión, etc.) basado en el tipo de app.
 apps = [
-    {"title1": "¿Qué fruta es más parecida?", "url": "https://classfruta-f.streamlit.app/", "tag": "Clasificación", "emoji": "🍎", "img_name": "fruta.png"},
-    {"title2": "Predictor de Sensación Térmica", "url": "https://detertorhumedad-nvjwjmhhrsty7bwfgstxa3.streamlit.app/", "tag": "Regresión", "emoji": "🌡️", "img_name": "termica.png"},
-    {"title3": "Descenso de Gradiente Interactivo", "url": "https://classgradiente-rilcadzxbznff36rzktne4.streamlit.app/#descenso-de-gradiente-interactivo", "tag": "Optimización", "emoji": "🎯", "img_name": "gradiente.png"},
-    {"title4": "Diagnóstico de fertilidad del suelo", "url": "https://fertilidadearth-rfvcy72pchvfvwzgd5wdlg.streamlit.app/", "tag": "Clasificación", "emoji": "🌱", "img_name": "suelo.png"},
-    {"title5": "¿Lloverá mañana? — Reg. Logística", "url": "https://modelostemphumedviento-6b2ajmpd6qz9scxbakf4uz.streamlit.app/", "tag": "Regresión", "emoji": "🌧️", "img_name": "lluvia.png"},
-    {"title6": "Detector de Anomalías", "url": "https://arc.net/l/quote/xoxiyzae", "tag": "Big-O", "emoji": "🚨", "img_name": "anomalias.png"},
-    {"title7": "Series de tiempo reales", "url": "https://processdata-pqmxqgcg4yacx9gpcowjsh.streamlit.app/", "tag": "Forecasting", "emoji": "📈", "img_name": "tiempo_real.png"},
-    {"title8": "Predictor de calidad del aire", "url": "https://pronosticomodelo-9pytzljfpl47tmyrlntbde.streamlit.app/", "tag": "Regresión", "emoji": "🌫️", "img_name": "aire.png"},
-    {"title9": "Regresión — Conceptos clave", "url": "https://regrecionclass-9zycjwxkrqzg3reuqub5zr.streamlit.app/", "tag": "Optimización", "emoji": "📉", "img_name": "regresion.png"},
-    {"title10": "Series de Tiempo — Sensor IoT", "url": "https://sensorsimulado-by8ou9uzu8yw4nxbzegbdt.streamlit.app/", "tag": "Streaming", "emoji": "🛜", "img_name": "iot.png"},
-    {"title11": "Nivel de ríos y quebradas", "url": "https://tallerportafolio1-df6dptfca4jgc7gf2nzoq8.streamlit.app/", "tag": "Forecasting", "emoji": "🌊", "img_name": "rios.png"}
+    {"title": "¿Qué fruta es más parecida?", "url": "https://classfruta-f.streamlit.app/", "tag": "Clasificación", "imagen": "ClasificacionFrutas.jpeg"},
+    {"title": "Predictor de Sensación Térmica", "url": "https://detertorhumedad-nvjwjmhhrsty7bwfgstxa3.streamlit.app/", "tag": "Regresión", "imagen": "RegrecionPredictiva.jpeg"},
+    {"title": "Descenso de Gradiente Interactivo", "url": "https://classgradiente-rilcadzxbznff36rzktne4.streamlit.app/#descenso-de-gradiente-interactivo", "tag": "Optimización", "imagen": "DesensoGradiente.jpeg"},
+    {"title": "Diagnóstico de fertilidad del suelo", "url": "https://fertilidadearth-rfvcy72pchvfvwzgd5wdlg.streamlit.app/", "tag": "Clasificación", "imagen": "ClasificacionFertilidad.jpeg"},
+    {"title": "¿Lloverá mañana? — Reg. Logística", "url": "https://modelostemphumedviento-6b2ajmpd6qz9scxbakf4uz.streamlit.app/", "tag": "Regresión", "imagen": "RegrecionLogistica.jpeg"},
+    {"title": "Detector de Anomalías", "url": "https://arc.net/l/quote/xoxiyzae", "tag": "Big-O", "imagen": "Big-OComplexity.jpeg"},
+    {"title": "Series de tiempo reales", "url": "https://processdata-pqmxqgcg4yacx9gpcowjsh.streamlit.app/", "tag": "Forecasting", "imagen": "SeriesTiempoReal.jpeg"},
+    {"title": "Predictor de calidad del aire", "url": "https://pronosticomodelo-9pytzljfpl47tmyrlntbde.streamlit.app/", "tag": "Regresión", "imagen": "seriesLinealesArima.jpeg"},
+    {"title": "Regresión — Conceptos clave", "url": "https://regrecionclass-9zycjwxkrqzg3reuqub5zr.streamlit.app/", "tag": "Optimización", "imagen": "Regression.jpeg"},
+    {"title": "Series de Tiempo — Sensor IoT", "url": "https://sensorsimulado-by8ou9uzu8yw4nxbzegbdt.streamlit.app/", "tag": "Streaming", "imagen": "SeriesTiempoReal.jpeg"}, # Reutilizando imagen si no tienes una específica
+    {"title": "Nivel de ríos y quebradas", "url": "https://tallerportafolio1-df6dptfca4jgc7gf2nzoq8.streamlit.app/", "tag": "Forecasting", "imagen": "NivelRiosQUbradas.jpeg"}
 ]
 
-# 5. Generar la cuadrícula de 3 columnas
+# Generar la cuadrícula de 3 columnas
 cols = st.columns(3)
 
 for idx, app in enumerate(apps):
-    col = cols[idx % 3] # Distribuye las apps iterativamente en las 3 columnas
+    col = cols[idx % 3]
     
-    # Limpiamos un poco la URL para que se vea más estética en la tarjeta
+    # Limpiamos un poco la URL
     display_url = app['url'].replace('https://', '').split('/')[0]
     
-    # --- ¿CÓMO AGREGAR TUS IMÁGENES LUEGO? ---
-    # Cuando tengas tus imágenes, súbelas a una carpeta (por ejemplo llamadas "img/fruta.png").
-    # En el div 'card-img-container' de abajo, cambia {app['emoji']} por esto:
-    # <img src="URL_DE_TU_IMAGEN_O_BASE64" alt="{app['title']}">
+    # Obtenemos el código Base64 de la imagen
+    img_base64 = obtener_imagen_base64(app['imagen'])
+    
+    # Si la imagen existe, creamos el tag <img> con el base64. Si no, ponemos un emoji por defecto.
+    if img_base64:
+        img_html = f'<img src="data:image/jpeg;base64,{img_base64}" alt="{app["title"]}">'
+    else:
+        img_html = '📁' # Emoji de respaldo en caso de que escribas mal el nombre del archivo
     
     card_html = f"""
     <a href="{app['url']}" target="_blank" class="card">
         <div class="card-img-container">
-            <img src="ClasificacionFrutas.jpeg" alt="{app['title1']}>
-            <img src="RegrecionPredictiva.jpeg" alt="{app['title2']}>
-            <img src="DesensoGrafiente.jpeg" alt="{app['title3']}>
-            <img src="ClasificacionFertilidad.jpeg" alt="{app['title4']}>
-            <img src="RegrecionLogistica.jpeg" alt="{app['title5']}>
-            <img src="Regression.jpeg" alt="{app['title6']}>
-            <img src="Regression.jpeg" alt="{app['title7']}>
-            <img src="Regression.jpeg" alt="{app['title8']}>
-            <img src="Regression.jpeg" alt="{app['title9']}>
-            <img src="Regression.jpeg" alt="{app['title10']}>
-            <img src="Regression.jpeg" alt="{app['title11']}>
+            {img_html}
         </div>
         <div class="card-content">
             <h3 class="card-title">{app['title']}</h3>
@@ -171,5 +176,4 @@ for idx, app in enumerate(apps):
     </a>
     """
     
-    # Inyectamos el HTML de la tarjeta en la columna correspondiente
     col.markdown(card_html, unsafe_allow_html=True)
