@@ -138,7 +138,7 @@ apps = [
     {"title": "Diagnóstico de fertilidad del suelo", "url": "https://fertilidadearth-rfvcy72pchvfvwzgd5wdlg.streamlit.app/", "tag": "Clasificación", "imagen": "ClasificacionFertilidad.jpeg"},
     {"title": "¿Lloverá mañana? — Reg. Logística", "url": "https://modelostemphumedviento-6b2ajmpd6qz9scxbakf4uz.streamlit.app/", "tag": "Regresión", "imagen": "RegrecionLogistica.jpeg"},
     {"title": "Detector de Anomalías", "url": "https://arc.net/l/quote/xoxiyzae", "tag": "Big-O", "imagen": "Big-OComplexity.jpeg"},
-    {"title": "Series de tiempo reales", "url": "https://processdata-pqmxqgcg4yacx9gpcowjsh.streamlit.app/", "tag": "Forecasting", "imagen": "SeriesTiempoReal.jpeg"},
+    {"title": "Series de tiempo reales", "url": "https://processdata-pqmxqgcg4yacx9gpcowjsh.streamlit.app/", "tag": "Forecasting", "imagen": "SeriesTiempoR.jpeg"},
     {"title": "Predictor de calidad del aire", "url": "https://pronosticomodelo-9pytzljfpl47tmyrlntbde.streamlit.app/", "tag": "Regresión", "imagen": "seriesLinealesArima.jpeg"},
     {"title": "Regresión — Conceptos clave", "url": "https://regrecionclass-9zycjwxkrqzg3reuqub5zr.streamlit.app/", "tag": "Optimización", "imagen": "Regression.jpeg"},
     {"title": "Series de Tiempo — Sensor IoT", "url": "https://sensorsimulado-by8ou9uzu8yw4nxbzegbdt.streamlit.app/", "tag": "Streaming", "imagen": "SeriesTiempoReal.jpeg"}, # Reutilizando imagen si no tienes una específica
